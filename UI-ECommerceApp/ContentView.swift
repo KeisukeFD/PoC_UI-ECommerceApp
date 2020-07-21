@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    init() {
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.backgroundColor = UIColor.white
+        standardAppearance.shadowColor = .clear
+        
+        let compactAppearance = UINavigationBarAppearance()
+        compactAppearance.backgroundColor = UIColor.white
+        compactAppearance.shadowColor = .clear
+        
+        let scrollEdgeAppearance = UINavigationBarAppearance()
+        scrollEdgeAppearance.backgroundColor = UIColor.white
+        scrollEdgeAppearance.shadowColor = .clear
+        
+        UINavigationBar.appearance().standardAppearance = standardAppearance
+        UINavigationBar.appearance().compactAppearance = compactAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = scrollEdgeAppearance
+    }
+    
     var body: some View {
-        Text("Hello, world!").padding()
+        NavigationView {
+            MainView()
+        }
     }
 }
 
